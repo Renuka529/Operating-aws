@@ -342,7 +342,8 @@ Program:
 #include <pthread.h>
 
 void* print_message(void* arg) {
-    printf("Hello from thread %d!\n", (int)arg);
+	int id=*(int*)arg;
+    printf("Hello from thread %d!\n",id);
     return NULL;
 }
 
@@ -359,6 +360,8 @@ int main() {
     printf("Threads finished execution.\n");
     return 0;
 }
+
+
 
 
 12.Design a C program to simulate the concept of Dining-Philosophers problem 
